@@ -21,7 +21,7 @@ def record_audio(question = False):
 		voice_data = ''
 		try:
 			voice_data = r.recognize_google(audio)
-		except sr.UnkownValueError:
+		except sr.UnknownValueError:
 			alexander_speak('Sorry, I didn\'t get that.')
 		except sr.RequestError:
 			alexander_speak('Sorry, my speech service is down.')
@@ -60,8 +60,8 @@ def respond(voice_data):
 		exit()
 
 #Start of the program
-time.sleep(1)
 alexander_speak("Hello! What can I help you with?")
+time.sleep(1)
 while 1:
 	voice_data = record_audio()
 	respond(voice_data)
