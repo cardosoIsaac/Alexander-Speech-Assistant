@@ -17,7 +17,10 @@ def record_audio(question = False):
 	with sr.Microphone() as source:
 		if question:
 			alexander_speak(question)
-		audio = r.listen(source)
+		try:
+			audio = r.listen(source,timeout=1,phrase_time_limit=10)
+		except sr.WaitTimeoutError:
+			return ''
 		voice_data = ''
 		try:
 			voice_data = r.recognize_google(audio)
