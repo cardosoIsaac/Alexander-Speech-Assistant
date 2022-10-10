@@ -1,5 +1,5 @@
 #Alexander Speech Assistant
-#This assistant listents for user voice commands and uses google speech recognition to reply to questions
+#This assistant listens for user voice commands and uses google speech recognition to reply to questions
 #as well as perform google searches and look up a location on google maps.
 
 import speech_recognition as sr
